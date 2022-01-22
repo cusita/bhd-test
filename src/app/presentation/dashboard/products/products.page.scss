@@ -1,0 +1,70 @@
+.products {
+  &__content {
+  background-color: #cccccc;
+    .card {
+      display: flex;
+      overflow: auto;
+      margin-bottom: 15px;
+      strong {
+        left: 5px;
+      }
+      .card__content {
+        display: flex;
+        flex-direction: column;
+        background: #49B742;
+        padding: 15px;
+        border-radius: 20px;
+        color: #fff;
+        margin: 15px;
+        .card__number {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          img {
+            width: 25px;
+          }
+        }
+        .card__value {
+          display: flex;
+          flex-direction: column;
+          margin-top: 25%;
+          width: 11rem;
+          span {
+            padding: 10px;
+          }
+        }
+        .card__type {
+          margin-top: 25%;
+          img {
+            width: 25px;
+          }
+        }
+      }
+    }
+
+    .transactions {
+      .transactions__content {
+        .transactions__incoming {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+          .transactions__description {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+            span {
+              margin-left: 10px;
+            }
+            .icono {
+              background-color: rgb(211, 18, 69, 5%);
+              padding: 10px;
+              border-radius: 5px;
+              color: #D31245;
+            }
+          }
+        }
+      }
+    }
+  }
+}

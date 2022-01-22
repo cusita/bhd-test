@@ -1,0 +1,25 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content class="login__content ion-padding">
+  <div class="logo">
+    <img src='assets/svg/logos_bhd/logo_horizontal.svg' alt='Logo BHD'>
+  </div>
+  <form [formGroup]="singIn" (submit)="onSubmit()">
+    <div class="content-btn">
+      <input type="text" formControlName="userId" placeholder="Número de cedula">
+      <input type="password" formControlName="password" placeholder="Contraseña">
+    </div>
+    <div class="switch">
+      <ion-toggle ></ion-toggle>
+      <span class="ion-padding">Recordar usuario</span>
+    </div>
+    <div class="btn-login">
+      <button type="submit">Iniciar sesión</button>
+    </div>
+  </form>
+
+</ion-content>
