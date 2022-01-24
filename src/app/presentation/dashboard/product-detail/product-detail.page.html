@@ -1,0 +1,33 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>product-detail</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="product-detail__content ion-padding">
+    <strong>Mis Tarjetas</strong>
+    <div class="card {{dataCard.productBrand}}">
+      <div class="card-type">
+        <img class="logo-bhd" src='assets/svg/logos_bhd/logo_white.svg' alt='Logo BHD'>
+        <img class="card-logo" src='assets/svg/{{dataCard.productBrand}}.svg' alt='Logo BHD'>
+      </div>
+      <div class="card-number">
+        <span>1234 7894 5632 1478</span>
+      </div>
+      <div class="card-name">
+        <span>Katya Alvear</span>
+        <div class="date-exp">
+          <span>Fecha de v.</span>
+          <p>12/24</p>
+        </div>
+      </div>
+    </div>
+    <div class="limit">
+      <ion-progress-bar value="0.5"></ion-progress-bar>
+    </div>
+    <div class="btn-pay">
+        <button type="submit">Pagar</button>
+    </div>
+  </div>
+</ion-content>

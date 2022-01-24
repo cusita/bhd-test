@@ -1,0 +1,68 @@
+.product-detail__content {
+  padding: 20px;
+  .card {
+  background: #49B742;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+    .card-type {
+    display: flex;
+    justify-content: space-between;
+      .logo-bhd {
+      height: 35px;
+      }
+      .card-logo {
+      height: 25px;
+      }
+    }
+    .card-number {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25%;
+    }
+    .card-name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    margin-top: 25%;
+
+    .date-exp {
+      line-height: 0;
+      margin-left: 25%;
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+  .mastercard {
+    background: #49B742;
+  }
+  .visa {
+    background: #B78842;
+  }
+}
+
+  .limit {
+  margin-top: 20px;
+  }
+
+  .btn-pay {
+    display: flex;
+    justify-content: center;
+    margin-top: 25%;
+    button {
+    background-color: #49b74200;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+    color: #49b742;
+    width: 100%;
+    font-size: 15px;
+    border: 1px solid #49b742;
+    }
+  }
+}
+
