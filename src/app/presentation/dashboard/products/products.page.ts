@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/member-ordering */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { ProductDetailPage } from '../product-detail/product-detail.page';
 
 @Component({
   selector: 'app-products',
@@ -11,7 +13,7 @@ export class ProductsPage implements OnInit {
 
   public dataCards = [
     {
-      productNumber: '78978933',
+      productNumber: '1234 7894 5632 1478',
       productBrand: 'mastercard',
       clientName: 'katya alvear',
       productEndingDate: '17/11',
@@ -90,8 +92,13 @@ export class ProductsPage implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private navController: NavController) { }
 
   ngOnInit() {
+  }
+
+  public onProductDetail(detail): void {
+    ProductDetailPage.product = detail;
+    this.navController.navigateForward('/product-detail');
   }
 }

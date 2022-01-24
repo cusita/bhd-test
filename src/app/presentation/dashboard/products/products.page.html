@@ -1,12 +1,12 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>products</ion-title>
+  <ion-toolbar >
+    <ion-title class="line-content">Mis productos</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="products__content ion-padding">
 <strong class="ion-padding">Mis Tarjetas</strong>
 <div class="card">
-    <div class="card__content {{card.productBrand}}" *ngFor="let card of dataCards">
+    <div class="card__content {{card.productBrand}}" *ngFor="let card of dataCards" (click)="onProductDetail(card);">
       <div class="card__number">
         <img src='assets/svg/logos_bhd/imagotipo_white.svg' alt='Logo BHD'>
         <span>{{card.productNumber | productNumberPipe: 4}}</span>
@@ -26,7 +26,10 @@
   <div class="transactions ion-padding" *ngFor="let movement of dataMovements">
     <div class="transactions__content">
       <div class="transactions__description">
-      <div class="icono {{movement.transactionType === 1 ? 'income' : 'expense'}}"> + </div>
+      <div class="icono {{movement.transactionType === 1 ? 'income' : 'expense'}}">
+        <ion-icon *ngIf="movement.transactionType === 1" name="arrow-up"></ion-icon>
+        <ion-icon *ngIf="movement.transactionType === 2" name="arrow-down"></ion-icon>
+      </div>
         <span>{{movement.description}}</span>
       </div>
       <div class="transactions__value {{movement.transactionType === 1 ? 'income' : 'expense'}}">
