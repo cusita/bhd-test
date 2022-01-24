@@ -3,54 +3,36 @@
     <ion-title>products</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content class="products__content ion-padding">
 <strong class="ion-padding">Mis Tarjetas</strong>
 <div class="card">
-    <div class="card__content">
+    <div class="card__content {{card.productBrand}}" *ngFor="let card of dataCards">
       <div class="card__number">
         <img src='assets/svg/logos_bhd/imagotipo_white.svg' alt='Logo BHD'>
-        <span>***** 6789</span>
+        <span>{{card.productNumber | productNumberPipe: 4}}</span>
       </div>
       <div class="card__value ion-padding">
-        <span>RDS 100.000.00</span>
-        <span>USS 100.000.00</span>
+        <span *ngIf="card.BalanceRD">RDS {{card.BalanceRD}}</span>
+        <span *ngIf="card.BalanceUS">USS {{card.BalanceUS}}</span>
       </div>
       <div class="card__type">
-        <img src='assets/svg/mastercard.svg' alt='Logo BHD'>
-      </div>
-    </div>
-
-    <div class="card__content">
-      <div class="card__number">
-        <img src='assets/svg/logos_bhd/imagotipo_white.svg' alt='Logo BHD'>
-        <span>***** 6789</span>
-      </div>
-      <div class="card__value ion-padding">
-        <span>RDS 100.000.00</span>
-        <span>USS 100.000.00</span>
-      </div>
-      <div class="card__type">
-        <img src='assets/svg/mastercard.svg' alt='Logo BHD'>
+        <img src='assets/svg/{{card.productBrand}}.svg' alt='Logo BHD'>
       </div>
     </div>
 </div>
 
-<strong class="ion-padding">Mis Transacciones</strong>
-<div class="transactions ion-padding">
-  <div class="transactions__content">
-    <div class="transactions__incoming">
+<strong class="ion-padding">Transacciones</strong>
+<div class="movements__content">
+  <div class="transactions ion-padding" *ngFor="let movement of dataMovements">
+    <div class="transactions__content">
       <div class="transactions__description">
-        <div class="icono">
-          <
-        </div>
-        <span>Pago en tienda</span>
+      <div class="icono {{movement.transactionType === 1 ? 'income' : 'expense'}}"> + </div>
+        <span>{{movement.description}}</span>
       </div>
-      <div class="transactions__value">
-        <span>$50.000</span>
+      <div class="transactions__value {{movement.transactionType === 1 ? 'income' : 'expense'}}">
+        <span>{{movement.transactionType === 1 ? '+' : '-'}} {{movement.amount}}</span>
       </div>
     </div>
   </div>
-  </div>
-
+</div>
 </ion-content>

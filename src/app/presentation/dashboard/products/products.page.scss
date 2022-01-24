@@ -1,21 +1,26 @@
 .products {
   &__content {
   background-color: #cccccc;
+    strong {
+      color: #666666;
+    }
     .card {
       display: flex;
       overflow: auto;
       margin-bottom: 15px;
       strong {
         left: 5px;
+        color: #666666;
       }
       .card__content {
         display: flex;
         flex-direction: column;
-        background: #49B742;
+        justify-content: space-between;
         padding: 15px;
         border-radius: 20px;
         color: #fff;
         margin: 15px;
+        background: #49B742;
         .card__number {
           display: flex;
           justify-content: space-between;
@@ -40,26 +45,54 @@
           }
         }
       }
+      .mastercard {
+        background: #49B742;
+      }
+      .visa {
+        background: #B78842;
+      }
     }
-
-    .transactions {
-      .transactions__content {
-        .transactions__incoming {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-          .transactions__description {
+    .movements__content {
+      .transactions {
+        .transactions__content {
           display: flex;
-          flex-direction: row;
+          justify-content: space-between;
           align-items: center;
+          .transactions__description {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
             span {
               margin-left: 10px;
             }
             .icono {
+            background-color: rgb(211, 18, 69, 5%);
+            padding: 10px;
+            border-radius: 5px;
+            color: #D31245;
+            width: 35px;
+            }
+            .income {
+              background-color: rgb(73, 183, 66, 5%);
+              color: #49B742;
+            }
+            .expense {
               background-color: rgb(211, 18, 69, 5%);
-              padding: 10px;
-              border-radius: 5px;
+              color: #D31245;
+            }
+          }
+          .transactions__value {
+            span {
+              color: #D31245;
+            }
+          }
+          .income {
+            span {
+              color: #49B742;
+            }
+          }
+          .expense {
+            span {
               color: #D31245;
             }
           }
