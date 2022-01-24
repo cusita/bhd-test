@@ -23,6 +23,14 @@ const routes: Routes = [
     path: 'product-detail',
     loadChildren: () =>
     import('./presentation/dashboard/product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./presentation/dashboard/settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'transactions',
+    loadChildren: () => import('./presentation/dashboard/transactions/transactions.module').then( m => m.TransactionsPageModule)
   }
 ];
 

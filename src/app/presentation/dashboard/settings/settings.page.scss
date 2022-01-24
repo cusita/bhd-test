@@ -1,0 +1,21 @@
+.line-content {
+  font-size: 12px;
+  color: #666666;
+  border-bottom: 3px solid #49B742;
+}
+
+.btn-logout {
+  display: flex;
+  justify-content: center;
+  margin-top: 120%;
+  button {
+  background-color: #49b74200;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 15px;
+  color: #D31245;
+  width: 100%;
+  font-size: 15px;
+  border: 1px solid #D31245;
+  }
+}
