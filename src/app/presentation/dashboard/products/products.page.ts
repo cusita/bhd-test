@@ -2,7 +2,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { MovementsModule } from '../model/movements.module';
+import { ProductModule } from '../model/product.module';
 import { ProductDetailPage } from '../product-detail/product-detail.page';
+import { CardsService } from '../services/cards.service';
 
 @Component({
   selector: 'app-products',
@@ -11,7 +14,7 @@ import { ProductDetailPage } from '../product-detail/product-detail.page';
 })
 export class ProductsPage implements OnInit {
 
-  public dataCards = [
+  public dataCards: ProductModule[] = [
     {
       productNumber: '1234 7894 5632 1478',
       productBrand: 'mastercard',
@@ -34,7 +37,7 @@ export class ProductsPage implements OnInit {
     }
   ];
 
-  public dataMovements = [
+  public dataMovements: MovementsModule[] = [
     {
       productNumber: '78978933',
       transactionType: 1,//egreso
@@ -92,7 +95,7 @@ export class ProductsPage implements OnInit {
     }
   ];
 
-  constructor(private navController: NavController) { }
+  constructor(private navController: NavController, private cardsService: CardsService) { }
 
   ngOnInit() {
   }
@@ -100,5 +103,13 @@ export class ProductsPage implements OnInit {
   public onProductDetail(detail): void {
     ProductDetailPage.product = detail;
     this.navController.navigateForward('/product-detail');
+  }
+
+  public async getCards(): Promise<void> {
+    try {
+      this.dataCards = await this.cardsService.getCards();
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

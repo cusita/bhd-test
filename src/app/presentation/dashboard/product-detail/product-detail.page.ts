@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, Input, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ProductModule } from '../model/product.module';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,28 +10,18 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./product-detail.page.scss'],
 })
 export class ProductDetailPage implements OnInit {
-  public static product;
-  public dataCard = {
-    productNumber: '78978933',
-    productBrand: 'mastercard',
-    clientName: 'katya alvear',
-    productEndingDate: '17/11',
-    BalanceRD: 200,
-    BalanceUS: 500,
-    LimitRD: 10000,
-    LimitUS: 5000
-  };
+  public static product: ProductModule;
 
   constructor(private navController: NavController) { }
 
   ngOnInit() {
   }
 
-  public get productDetail() {
+  public get productDetail(): ProductModule {
     return ProductDetailPage.product;
   }
 
-  public returnProducts() {
+  public returnProducts(): void {
     this.navController.navigateBack('/products');
   }
 }

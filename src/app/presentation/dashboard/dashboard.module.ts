@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CardsService } from './services/cards.service';
 
 const routes: Routes = [
   {
@@ -29,5 +30,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes)
   ],
+  providers: [CardsService]
 })
 export class DashboardModule {}
